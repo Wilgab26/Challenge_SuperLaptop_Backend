@@ -20,3 +20,11 @@ jobs:
 
       - name: Run tests
         run: ./mvnw --batch-mode clean verify
+
+      - name: Upload coverage to Coveralls
+        if: success()
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          file: target/site/jacoco/jacoco.xml
+          format: jacoco

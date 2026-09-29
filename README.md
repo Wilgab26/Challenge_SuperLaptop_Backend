@@ -7,11 +7,11 @@ El proyecto implementa una arquitectura tradicional de Spring Boot, con persiste
 ## Badges
 
 [![Build](https://img.shields.io/badge/build-Maven%20verify-brightgreen)](.github/workflows/tests.yml)
-[![Coverage](https://img.shields.io/badge/coverage-not%20configured-lightgrey)](#testing)
+[![Coverage Status](https://coveralls.io/repos/github/Wilgab26/Challenge_SuperLaptop_Backend/badge.svg?branch=main)](https://coveralls.io/github/Wilgab26/Challenge_SuperLaptop_Backend?branch=main)
 [![Java](https://img.shields.io/badge/Java-21-blue)](https://www.oracle.com/java/technologies/downloads/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.5-6DB33F)](https://spring.io/projects/spring-boot)
 
-> El badge de build identifica el workflow de GitHub Actions del proyecto. La cobertura todavía no está instrumentada con JaCoCo; por eso no se muestra un porcentaje.
+> Coveralls publica el porcentaje de cobertura después de que GitHub Actions ejecuta los tests y genera el reporte JaCoCo.
 
 ## Features
 
@@ -214,7 +214,7 @@ En IntelliJ, ejecuta `SlaptopApplicationTests`; no ejecutes `BaseIntegrationTest
 
 Los casos actuales cubren el flujo de creación y consulta de laptop, registro de incidente y reporte, catálogo, validación, referencias inexistentes y conflictos por correo e IP duplicados. GitHub Actions ejecuta `clean verify` en cada push y pull request.
 
-La dependencia de Mockito está disponible en `spring-boot-starter-test`; todavía no hay pruebas unitarias de servicios con mocks. La cobertura de código tampoco está configurada, por lo que el badge de coverage queda pendiente de instrumentar con JaCoCo.
+JaCoCo genera el reporte XML en `target/site/jacoco/jacoco.xml` durante `verify`. GitHub Actions lo envía a Coveralls al completar correctamente la suite. Para que el badge muestre datos, habilita el repositorio `Wilgab26/Challenge_SuperLaptop_Backend` en Coveralls. La dependencia de Mockito está disponible en `spring-boot-starter-test`; todavía no hay pruebas unitarias de servicios con mocks.
 
 ## Project Status
 
