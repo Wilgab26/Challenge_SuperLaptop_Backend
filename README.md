@@ -6,8 +6,8 @@ El proyecto implementa una arquitectura tradicional de Spring Boot, con persiste
 
 ## Badges
 
+[![Coverage Status](https://coveralls.io/repos/github/Wilgab26/Challenge_SuperLaptop_Backend/badge.svg?branch=main)](https://coveralls.io/github/Wilgab26/Challenge_SuperLaptop_Backend?branch=main)
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Wilgab26/Challenge_SuperLaptop_Backend/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Wilgab26/Challenge_SuperLaptop_Backend/tree/main)
-[![Coverage Status](https://coveralls.io/repos/github/Wilgab26/Challenge_SuperLaptop_Backend/badge.svg)](https://coveralls.io/github/Wilgab26/Challenge_SuperLaptop_Backend)
 [![Java](https://img.shields.io/badge/Java-21-blue)](https://www.oracle.com/java/technologies/downloads/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.5-6DB33F)](https://spring.io/projects/spring-boot)
 [![Automated tests](https://github.com/Wilgab26/Challenge_SuperLaptop_Backend/actions/workflows/tests.yml/badge.svg)](https://github.com/Wilgab26/Challenge_SuperLaptop_Backend/actions/workflows/tests.yml)
