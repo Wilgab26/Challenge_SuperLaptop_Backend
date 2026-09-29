@@ -2,14 +2,15 @@ version: 2.1
 
 jobs:
   test:
-    docker:
-      - image: cimg/openjdk:21.0
+    machine:
+      image: ubuntu-2204:current
     steps:
       - checkout
-      - setup_remote_docker
       - run:
           name: Run Maven integration tests
-          command: ./mvnw --batch-mode clean verify
+          command: |
+            chmod +x ./mvnw
+            ./mvnw --batch-mode clean verify
 
 workflows:
   test:
