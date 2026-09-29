@@ -3,12 +3,13 @@ version: 2.1
 jobs:
   test:
     machine:
-      image: ubuntu-2204:current
+      image: ubuntu-2404:current
     steps:
       - checkout
       - run:
-          name: Run Maven integration tests
+          name: Verify Java and run Maven integration tests
           command: |
+            java -version
             chmod +x ./mvnw
             ./mvnw --batch-mode clean verify
 
