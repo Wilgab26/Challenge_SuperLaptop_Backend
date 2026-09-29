@@ -10,6 +10,7 @@ El proyecto implementa una arquitectura tradicional de Spring Boot, con persiste
 [![Coverage Status](https://coveralls.io/repos/github/Wilgab26/Challenge_SuperLaptop_Backend/badge.svg)](https://coveralls.io/github/Wilgab26/Challenge_SuperLaptop_Backend)
 [![Java](https://img.shields.io/badge/Java-21-blue)](https://www.oracle.com/java/technologies/downloads/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.5-6DB33F)](https://spring.io/projects/spring-boot)
+[![Automated tests](https://github.com/Wilgab26/Challenge_SuperLaptop_Backend/actions/workflows/tests.yml/badge.svg)](https://github.com/Wilgab26/Challenge_SuperLaptop_Backend/actions/workflows/tests.yml)
 
 > Coveralls publica el porcentaje de cobertura después de que GitHub Actions ejecuta los tests y genera el reporte JaCoCo.
 
@@ -196,7 +197,7 @@ Los errores de validación, conflictos de integridad y recursos inexistentes se 
 
 ## Testing
 
-La suite de integración ejecuta la aplicación Spring y `MockMvc` contra un contenedor PostgreSQL 16; no usa H2 ni requiere que la base local `slaptop` esté disponible. Docker debe estar activo antes de ejecutar estos tests.
+La suite combina pruebas unitarias de servicios con Mockito y pruebas de integración que ejecutan la aplicación Spring y `MockMvc` contra PostgreSQL 16 en Testcontainers; no usa H2 ni requiere que la base local `slaptop` esté disponible. Docker debe estar activo para las pruebas de integración.
 
 En Windows:
 
@@ -212,9 +213,9 @@ En Linux/macOS:
 
 En IntelliJ, ejecuta `SlaptopApplicationTests`; no ejecutes `BaseIntegrationTest` directamente, porque es la clase base compartida.
 
-Los casos actuales cubren el flujo de creación y consulta de laptop, registro de incidente y reporte, catálogo, validación, referencias inexistentes y conflictos por correo e IP duplicados. GitHub Actions ejecuta `clean verify` en cada push y pull request.
+Los casos cubren las operaciones de catálogo y servicios, el flujo de creación y consulta de laptop, registro de incidentes y reporte, validación, referencias inexistentes y conflictos por correo e IP duplicados. JaCoCo genera el reporte XML en `target/site/jacoco/jacoco.xml`; Maven hace fallar el build si la cobertura de líneas total del proyecto queda por debajo del 80%. GitHub Actions ejecuta `clean verify` en cada push y pull request.
 
-JaCoCo genera el reporte XML en `target/site/jacoco/jacoco.xml` durante `verify`. GitHub Actions lo envía a Coveralls al completar correctamente la suite. Para que el badge muestre datos, habilita el repositorio `Wilgab26/Challenge_SuperLaptop_Backend` en Coveralls. La dependencia de Mockito está disponible en `spring-boot-starter-test`; todavía no hay pruebas unitarias de servicios con mocks.
+GitHub Actions envía el reporte a Coveralls al completar correctamente la suite. Para que el badge muestre datos, habilita el repositorio `Wilgab26/Challenge_SuperLaptop_Backend` en Coveralls. JaCoCo además aplica un umbral mínimo global de 80% de cobertura de líneas.
 
 ## Project Status
 
